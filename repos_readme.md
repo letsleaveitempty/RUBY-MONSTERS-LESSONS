@@ -12,3 +12,8 @@ git remote
 git pull
 git pull upstream #name of branch#
 git push origin #name of branch#
+
+
+after adding new branch to original :
+git fetch upstream (branch already exists on locla machine)
+git push origin upstream/#name of new branch# (push new branch into your forked repo on github) 
