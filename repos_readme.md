@@ -10,4 +10,5 @@ git remote
 
 
 git pull
-git push origin #name of branch
+git pull upstream #name of branch#
+git push origin #name of branch#
