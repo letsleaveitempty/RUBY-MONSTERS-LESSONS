@@ -16,7 +16,11 @@ describe ContactsController do
   end
 
   describe "GET #edit" do
-    xit 'renders the proper view'
+  # it will not work because we have edit option only on different branch
+    xit 'renders the proper view' do
+      get :edit, id: contact.id
+      expect(response).to render_template('edit')
+    end
   end
 
   describe "PUT #update" do
