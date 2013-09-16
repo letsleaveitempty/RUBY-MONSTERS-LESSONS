@@ -6,11 +6,26 @@ require 'spec_helper'
 feature 'Contacts management', js: true do
 
   describe "edit contact" do
-    # HOMEWORK
+    scenario 'see updated first_name' do
+      Contact.create!(first_name:'Anita')
+      Contact.update(first_name:'Anitka')
+
+      visit contacts_path
+
+      expect(page).to have_content "Anitka"
+    end
   end
 
   describe "removal" do
-    # HOMEWHORK
+    scenario 'see list without removed contact' do
+      Contact.create!(first_name:'Anita')
+      Contact.create!(first_name:'Anna')
+      Contact.delete(1)
+
+      visit contacts_path
+
+      expect(Contact.count).to be(1)
+    end
   end
 
   describe 'listing contacts' do
